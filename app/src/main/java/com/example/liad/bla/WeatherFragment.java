@@ -16,11 +16,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class WeatherFragment extends Fragment {
 
     private String APP_ID = "d31cd0625650822fda879a128a362060";
     private MyArrayList<City> cities;
-    private RecyclerView recyclerView1;
+    private RecyclerView recyclerView;
     private CityWeatherAdapter adapter;
     private String[] citiesNames = new String[]
             {"London",
@@ -37,15 +39,15 @@ public class WeatherFragment extends Fragment {
         SnapHelperOneByOne snapHelperOneByOne = new SnapHelperOneByOne();
 
         cities = new MyArrayList<>();
-        recyclerView1 = view.findViewById(R.id.weather_recycler_view);
+        recyclerView = view.findViewById(R.id.weather_recycler_view);
         progressBar = view.findViewById(R.id.city_item_progress_bar);
 
         getCities();
         adapter = new CityWeatherAdapter(getActivity(), this, cities);
 
-        snapHelperOneByOne.attachToRecyclerView(recyclerView1);
-        recyclerView1.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
-        recyclerView1.setAdapter(adapter);
+        snapHelperOneByOne.attachToRecyclerView(recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
+        recyclerView.setAdapter(adapter);
 
         return view;
     }
