@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.liad.bla.WeatherFragment">
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/city_item_progress_bar"
+        android:layout_width="35dp"
+        android:layout_centerInParent="true"
+        android:layout_height="35dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/weather_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
