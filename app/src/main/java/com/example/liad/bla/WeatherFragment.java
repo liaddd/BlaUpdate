@@ -30,6 +30,7 @@ public class WeatherFragment extends Fragment {
                     "Kathmandu", "Laspi", "Merida", "Alupka",
                     "Bee House", "Morden", "Nasirotu"};
     private ProgressBar progressBar;
+    private LinePagerIndicatorDecoration linePagerIndicatorDecoration = new LinePagerIndicatorDecoration();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class WeatherFragment extends Fragment {
 
         snapHelperOneByOne.attachToRecyclerView(recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
+        recyclerView.addItemDecoration(linePagerIndicatorDecoration);
         recyclerView.setAdapter(adapter);
 
         return view;
